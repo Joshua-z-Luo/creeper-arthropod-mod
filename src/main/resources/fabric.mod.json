@@ -9,11 +9,11 @@
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Joshua-z-Luo/creeper-arthropod-mod"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/creepers-are-arthropods/icon.png",
-	"environment": "server",
+	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"com.creeparthropods.CreepersAreArthropods"
