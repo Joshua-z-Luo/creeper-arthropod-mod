@@ -3,7 +3,8 @@
 	"package": "com.creeparthropods.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"LivingEntityMixin"
+		"LivingEntityMixin",
+		"BaneOfArthropodsEnchantmentMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

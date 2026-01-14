@@ -13,7 +13,6 @@ public abstract class LivingEntityMixin {
 
 	@Inject(method = "getGroup", at = @At("RETURN"), cancellable = true)
 	private void modifyGetGroup(CallbackInfoReturnable<EntityGroup> info) {
-		// Check if the current instance is a Creeper
 		if (((LivingEntity)(Object)this) instanceof CreeperEntity) {
 			info.setReturnValue(EntityGroup.ARTHROPOD);
 		}
