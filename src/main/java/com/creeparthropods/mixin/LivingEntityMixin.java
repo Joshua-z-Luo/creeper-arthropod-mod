@@ -7,13 +7,17 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import com.creeparthropods.config.CreeperArthropodsConfig;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
 
 	@Inject(method = "getGroup", at = @At("RETURN"), cancellable = true)
 	private void modifyGetGroup(CallbackInfoReturnable<EntityGroup> info) {
-		// Check if the current instance is a Creeper
+		if (CreeperArthropodsConfig.INSTANCE != null
+				&& CreeperArthropodsConfig.INSTANCE.disableCreeperArthropod) {
+			return;
+		}
 		if (((LivingEntity)(Object)this) instanceof CreeperEntity) {
 			info.setReturnValue(EntityGroup.ARTHROPOD);
 		}

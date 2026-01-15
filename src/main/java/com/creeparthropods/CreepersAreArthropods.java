@@ -1,12 +1,13 @@
 package com.creeparthropods;
 
 import net.fabricmc.api.ModInitializer;
+import com.creeparthropods.config.CreeperArthropodsConfig;
 
 public class CreepersAreArthropods implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        // Log message to confirm that the mod is loaded
+        CreeperArthropodsConfig.load();
         System.out.println("Creepers Are Arthropods mod initialized!");
     }
 }
